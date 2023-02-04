@@ -1,7 +1,11 @@
 import React from 'react'
 
-export default function MovieEntry() {
+export default function MovieEntry({ movie }) {
   return (
-    <div>MovieEntry</div>
+    <div>
+      {movie.original_title}
+      <br/>
+      {movie.release_date}
+    </div>
   )
 }
