@@ -1,7 +1,7 @@
 .search-bar {
   width: 50%;
   margin: auto;
-  padding-top: 400px;
+  margin-top: 150px;
 }
 
 .radio-group {
@@ -24,13 +24,17 @@
   margin: auto;
 }
 
+.trending-card {
+  font-size: 10px;
+}
+
 html {
   height: 100%;
   margin: 0;
 }
 
 body {
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px) brightness(65%);
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
