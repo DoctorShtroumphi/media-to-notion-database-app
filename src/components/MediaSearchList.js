@@ -40,25 +40,26 @@ export default function MediaSearchList({ mediaList, apiKey }) {
     return (
       <div>
         <MediaEntries currentMediaEntries={currentMediaEntries} />
-        <div className='media-list-pagination mt-3'>
+        <div className='media-list-pagination'>
           <ReactPaginate
-            breakLabel='...'
-            nextLabel='Next'
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel='Previous'
-            renderOnZeroPageCount={null}
+            activeClassName={'active'}
             breakClassName={'page-item'}
+            breakLabel='...'
             breakLinkClassName={'page-link'}
             containerClassName={'pagination'}
-            pageClassName={'page-item'}
-            pageLinkClassName={'page-link'}
-            previousClassName={'page-item'}
-            previousLinkClassName={'page-link'}
             nextClassName={'page-item'}
+            nextLabel='Next'
             nextLinkClassName={'page-link'}
-            activeClassName={'active'} />
+            onPageChange={handlePageClick}
+            pageClassName={'page-item'}
+            pageCount={pageCount}
+            pageLinkClassName={'page-link'}
+            pageRangeDisplayed={5}
+            previousClassName={'page-item'}
+            previousLabel='Previous'
+            previousLinkClassName={'page-link'}
+            renderOnZeroPageCount={null}
+          />
         </div>
       </div>
     );
