@@ -72,6 +72,14 @@ body {
   font-size: 16px;
 }
 
+.media-entry-button-modal {
+  --bs-btn-bg: #3D2C57;
+  --bs-btn-hover-bg: #5A4181;
+  --bs-btn-hover-border-color: #3D2C57;
+  font-size: 16px;
+  width: 100%;
+}
+
 /* PAGINATION */
 
 .media-list-pagination {
