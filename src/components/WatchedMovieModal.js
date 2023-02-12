@@ -2,13 +2,11 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-//import { connect } from '@reduxjs/toolkit'
-import { getRatings } from '../redux/reducers/ratingsSlice';
-import { getScareFactors } from '../redux/reducers/scareFactorsSlice';
 import { useSelector } from 'react-redux';
 
 export default function WatchedMovieModal({ mediaType, completeMedia, showWatchedMovieModal, setShowWatchedMovieModal }) {
-  const ratings = useSelector((state) => state.ratings.value.ratings);
+  const ratings = useSelector((state) => state.ratings.value);
+  const scareFactors = useSelector((state) => state.scareFactors.value);
 
   function getTitle() {
     if (completeMedia) {
@@ -33,7 +31,7 @@ export default function WatchedMovieModal({ mediaType, completeMedia, showWatche
   function getGenres() {
     if (completeMedia) {
       console.log(ratings);
-      //console.log(dispatch(getScareFactors()));
+      console.log(scareFactors);
       return completeMedia.genres.map((genre) => <li key={genre.id}>{genre.name}</li>)
     }
   }
@@ -63,10 +61,3 @@ export default function WatchedMovieModal({ mediaType, completeMedia, showWatche
     </Modal>
   )
 }
-
-/*const mapStateToProps = state => ({
-  ratings: state.ratings,
-  scareFactors: state.scareFactors
-});*/
-
-//export default connect(mapStateToProps)(WatchedMovieModal);

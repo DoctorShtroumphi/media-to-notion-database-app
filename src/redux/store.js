@@ -1,4 +1,3 @@
-//import { api } from './apiSlice'
 import { configureStore } from '@reduxjs/toolkit';
 import mediaListReducer from './reducers/mediaListSlice';
 import ratingsReducer from './reducers/ratingsSlice';
@@ -10,7 +9,4 @@ export const store = configureStore({
     ratings: ratingsReducer,
     scareFactors: scareFactorsReducer
   }
-
 });
-//[api.reducerPath]: api.reducer,
-//middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware)

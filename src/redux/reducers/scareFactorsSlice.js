@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const scareFactorsSlice = createSlice({
   name: 'scareFactors',
-  initialState: [],
+  initialState: { value: [] },
   reducers: {
-    getScareFactors(state, action) {
-      return state;
+    getScareFactors(state) {
+      return state.value;
     },
     setScareFactors(state, action) {
-      state = action.payload
+      state.value = action.payload
     }
   }
 });

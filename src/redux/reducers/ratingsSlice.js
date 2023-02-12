@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const ratingsSlice = createSlice({
   name: 'ratings',
-  initialState: { value: { ratings: [] } },
+  initialState: { value: [] },
   reducers: {
     getRatings: (state) => {
       return state.value;
