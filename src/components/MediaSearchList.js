@@ -7,7 +7,7 @@ export default function MediaSearchList({ mediaList, apiKey }) {
     return (
       <div className='media-card-list'>
         {
-          currentMediaEntries && currentMediaEntries.map((media) => (
+          currentMediaEntries && currentMediaEntries.map(media => (
             <MediaEntry key={media.id} media={media} apiKey={apiKey} />
           ))
         }
