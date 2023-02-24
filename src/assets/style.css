@@ -50,6 +50,10 @@ body {
   max-width: 20%;
 }
 
+.trending-popover-inner-button {
+  width: 100%;
+}
+
 .media-card-list {
   display: flex;
   justify-content: space-around;
@@ -73,8 +77,8 @@ body {
 }
 
 .media-entry-modal {
-  width: 45%;
   max-width: 45%;
+  width: 45%;
 }
 
 .media-entry-modal-outer-body {
@@ -83,10 +87,10 @@ body {
 }
 
 .media-entry-modal-inner-body {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .media-entry-modal-inner-body div {
@@ -98,10 +102,10 @@ body {
 }
 
 .media-entry-modal-order-inputs {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
 }
 
 .media-entry-modal-order-input {
@@ -117,9 +121,9 @@ body {
 }
 
 .media-entry-modal-carousel-img {
-  width: 65%;
-  margin: auto;
   border-radius: 10px;
+  margin: auto;
+  width: 65%;
 }
 
 .media-entry-button-modal {
@@ -128,6 +132,14 @@ body {
   --bs-btn-hover-border-color: #3D2C57;
   font-size: 16px;
   width: 100%;
+}
+
+.no-media-found {
+  color: white;
+  display: none;
+  margin-top: 20%;
+  text-align: center;
+  text-shadow: rgb(0, 0, 0) 1px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
 }
 
 /* PAGINATION */

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
-export default function TrendingMediaBannerAndCard({ apiKey }) {
+export default function TrendingMediaBannerAndCard({ apiKey, setSearchFromPopover }) {
   const todaysMediaType = new Date().getDate() % 2 === 0 ? 'movie' : 'tv';
   const [media, setMedia] = useState('');
   const mediaTitle = useRef('');
@@ -33,12 +33,18 @@ export default function TrendingMediaBannerAndCard({ apiKey }) {
   const popover = (
     <Popover id='popover-basic' className='trending-popover'>
       <Popover.Header as='h3'>{mediaTitle.current} ({mediaReleaseDate.current})</Popover.Header>
-      <Popover.Body>{media.overview}</Popover.Body>
+      <Popover.Body>
+        {media.overview}
+        <br /> <br />
+        <Button variant='primary' className='trending-popover-inner-button' onClick={() => setSearchFromPopover(mediaTitle.current)}>
+          Find this {todaysMediaType}
+        </Button>
+      </Popover.Body>
     </Popover>
   );
 
   return (
-    <OverlayTrigger trigger='click' placement='right' overlay={popover}>
+    <OverlayTrigger trigger='click' placement='right' overlay={popover} rootClose={true}>
       <Button variant='dark' className='trending-button'>{getStringRepresentationOfMediaType()} of the day</Button>
     </OverlayTrigger>
   );

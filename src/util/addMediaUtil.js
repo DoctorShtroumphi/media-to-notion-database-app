@@ -5,7 +5,6 @@ export async function addWatchedMovieToNotionDatabase(completeMedia, rewatch, ch
   const body = createPostBodyForWatchedMovie(completeMedia, rewatch, chronologicalOrder, releaseOrder, rating, scareFactor, backdropUrl);
   return axios.post('http://localhost:5000/createWatchedMovie', body)
     .then((response) => {
-      console.log(response);
       return response.data;
     })
     .catch(err => {

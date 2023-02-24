@@ -86,7 +86,7 @@ export default function WatchedMovieModal({ mediaType, completeMedia, showWatche
           </Modal.Header>
           <Modal.Body>
             {/* RESPONSE TOAST */}
-            <Toast show={showToast} onClose={() => setShowToast(!showToast)} bg={toastVariant} style={{ position: 'absolute', top: 0, right: 0 }}>
+            <Toast show={showToast} onClose={() => setShowToast(!showToast)} bg={toastVariant} style={{ position: 'absolute', top: 10, right: 10 }}>
               <Toast.Header><strong className='me-auto'>{toastHeader}</strong></Toast.Header>
               <Toast.Body style={{ color: 'white' }}>{toastBody}</Toast.Body>
             </Toast>
