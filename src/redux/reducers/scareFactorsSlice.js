@@ -8,7 +8,7 @@ const scareFactorsSlice = createSlice({
       return state.value;
     },
     setScareFactors(state, action) {
-      state.value = action.payload
+      state.value = action.payload;
     }
   }
 });

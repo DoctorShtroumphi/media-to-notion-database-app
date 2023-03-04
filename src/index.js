@@ -1,11 +1,14 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
+
 import ReactDOM from 'react-dom/client';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/style.css';
+import { Provider } from 'react-redux';
+
 import App from './App';
+import { store } from './redux/store';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux'
-import { store } from './redux/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

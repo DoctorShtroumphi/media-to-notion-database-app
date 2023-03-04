@@ -1,5 +1,10 @@
-import React, { useState } from 'react'
+/**
+ * Not my code, should not be changed much other than the exported function.
+ */
+import React, { useState } from 'react';
+
 import ReactPaginate from 'react-paginate';
+
 import MediaEntry from './MediaEntry';
 
 export default function MediaSearchList({ mediaList, apiKey }) {
@@ -67,5 +72,5 @@ export default function MediaSearchList({ mediaList, apiKey }) {
 
   return (
     <PaginatedMediaEntries mediasPerPage={5} />
-  )
+  );
 }

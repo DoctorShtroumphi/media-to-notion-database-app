@@ -1,25 +1,30 @@
-import { getTitle, getReleaseDate, getGenres, getRuntime, getDescription, getFranchise, getBackdropUrls } from '../util/mediaUtil';
-import { addWatchedMovieToNotionDatabase } from '../util/addMediaUtil';
-import React, { useEffect, useState } from 'react'
+/* eslint-disable no-inner-declarations */
+import React, { useEffect, useState } from 'react';
+
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
-import { useSelector } from 'react-redux';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import Toast from 'react-bootstrap/Toast';
+import { useSelector } from 'react-redux';
+
+import { addWatchedMovieToNotionDatabase } from '../util/addMediaUtil';
+import { getBackdropUrls, getDescription, getFranchise, getGenres, getReleaseDate, getRuntime, getTitle } from '../util/mediaUtil';
 
 export default function WatchedMovieModal({ mediaType, completeMedia, showWatchedMovieModal, setShowWatchedMovieModal }) {
+  // State Variables - Fields
   const [chronologicalOrder, setChronologicalOrder] = useState('');
   const [releaseOrder, setReleaseOrder] = useState('');
-  const [rewatch, setRewatch] = useState(false)
+  const [rewatch, setRewatch] = useState(false);
   const [selectedRating, setSelectedRating] = useState('');
   const [selectedScareFactor, setSelectedScareFactor] = useState('');
 
+  // State Variables - Toast
   const [showToast, setShowToast] = useState(false);
-  const [toastHeader, setToastHeader] = useState('');
   const [toastBody, setToastBody] = useState('');
-  const [toastVariant, setToastVariant] = useState('')
+  const [toastHeader, setToastHeader] = useState('');
+  const [toastVariant, setToastVariant] = useState('');
 
   const ratings = useSelector((state) => state.ratings.value);
   function getRatingsSelectMenuOptions() {
@@ -46,7 +51,7 @@ export default function WatchedMovieModal({ mediaType, completeMedia, showWatche
   }
 
   const [selectedBackdrop, setSelectedBackdrop] = useState(0);
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex) => {
     setSelectedBackdrop(selectedIndex);
   };
 
@@ -67,7 +72,6 @@ export default function WatchedMovieModal({ mediaType, completeMedia, showWatche
   // ONLY CREATE THE MODAL IF IT SHOULD CURRENTLY BE DISPLAYED 
   if (showWatchedMovieModal) {
     const backdropUrls = getBackdropUrls(completeMedia);
-
     function createBackdropCarousel() {
       return (
         backdropUrls.map((backdropUrl, index) =>
@@ -156,6 +160,6 @@ export default function WatchedMovieModal({ mediaType, completeMedia, showWatche
           </Modal.Body>
         </Modal>
       </>
-    )
+    );
   }
 }

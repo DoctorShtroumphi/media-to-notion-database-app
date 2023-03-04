@@ -1,15 +1,21 @@
-import { getTitle, getReleaseDate } from '../util/mediaUtil';
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
+
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
+import { getReleaseDate, getTitle } from '../util/mediaUtil';
+
 export default function TrendingMediaBannerAndCard({ apiKey, setSearchFromPopover }) {
   const todaysMediaType = new Date().getDate() % 2 === 0 ? 'movie' : 'tv';
+
+  // State Variables
   const [media, setMedia] = useState('');
-  const mediaTitle = useRef('');
+
+  // Ref Variables
   const mediaReleaseDate = useRef('');
+  const mediaTitle = useRef('');
 
   // Get trending media piece.
   useEffect(() => {

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { getTitle, getReleaseDate, getGenresForJson, getRuntime, getFranchiseForJson, getOrderForJson } from '../util/mediaUtil';
+
+import { getFranchiseForJson, getGenresForJson, getOrderForJson, getReleaseDate, getRuntime, getTitle } from '../util/mediaUtil';
 
 export async function addWatchedMovieToNotionDatabase(completeMedia, rewatch, chronologicalOrder, releaseOrder, rating, scareFactor, backdropUrl) {
   const body = createPostBodyForWatchedMovie(completeMedia, rewatch, chronologicalOrder, releaseOrder, rating, scareFactor, backdropUrl);

@@ -8,7 +8,7 @@ const mediaListSlice = createSlice({
       return state.value;
     },
     setMediaList: (state, action) => {
-      state.value = action.payload
+      state.value = action.payload;
     }
   }
 });

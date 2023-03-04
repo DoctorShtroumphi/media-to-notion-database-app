@@ -8,7 +8,7 @@ const ratingsSlice = createSlice({
       return state.value;
     },
     setRatings: (state, action) => {
-      state.value = action.payload
+      state.value = action.payload;
     }
   }
 });
